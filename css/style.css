@@ -19,7 +19,6 @@ header {
   padding: 2.5rem 1rem;
 }
 
-/* 🔴 MODIFICA LOGO */
 .site-header {
   max-width: 1100px;
   margin: 0 auto;
@@ -43,7 +42,6 @@ header {
   margin-bottom: 0.5rem;
 }
 
-/* MOBILE: logo centrato */
 @media (max-width: 768px) {
   .site-header {
     flex-direction: column;
@@ -81,16 +79,15 @@ ul {
 }
 
 ul li {
-  padding-left: 1.5rem;
-  position: relative;
+  padding-left: 0;
+  position: static;
 }
 
-ul li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #27ae60;
-  font-weight: bold;
+.icon {
+  display: inline-flex;
+  width: 1.75rem;
+  justify-content: center;
+  margin-right: 0.35rem;
 }
 
 .contact {
@@ -108,7 +105,6 @@ ul li::before {
   background: #fff;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
-
   color: #0b5d1e;
   font-weight: 800;
   text-decoration: none;
@@ -118,7 +114,6 @@ ul li::before {
   background: #f7f7f7;
   text-decoration: underline;
 }
-
 
 footer {
   background: #2c3e50;
@@ -166,13 +161,11 @@ footer {
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 2000;
-
-  /* ✅ permette swipe orizzontale senza bloccare lo scroll verticale */
   touch-action: pan-y;
 }
 
@@ -180,8 +173,6 @@ footer {
   max-width: 90%;
   max-height: 85%;
   border-radius: 12px;
-
-  /* ✅ evita selezione/drag immagine su mobile */
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -211,17 +202,22 @@ footer {
   align-items: center;
   justify-content: center;
   z-index: 1500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
-.whatsapp-float { bottom: 18px; background: #25D366; }
+.whatsapp-float { bottom: 18px; background: #25d366; }
 .call-float { bottom: 84px; background: #007bff; }
-.messenger-float { bottom: 150px; background: #0084FF; }
+.messenger-float { bottom: 150px; background: #0084ff; }
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+}
 
 .instagram-float {
   position: fixed;
   right: 18px;
-  bottom: 216px; /* sopra Messenger */
+  bottom: 216px;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -230,7 +226,7 @@ footer {
   align-items: center;
   justify-content: center;
   z-index: 1500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease;
 }
 
